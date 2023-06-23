@@ -8,7 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class InventoryDTO {
-    private String uuid;
+    private Long inventoryId;
     private String idPerson;
     private List<ItemDTO> items;
 }

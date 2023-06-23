@@ -18,9 +18,9 @@ public class GetByIdIventoryServiceImpl implements GetByIdInventoryService {
     private final InventoryMapper inventoryMapper;
 
     @Override
-    public InventoryDTO getById(String idInventory) {
+    public InventoryDTO getById(Long idInventory) {
         return inventoryMapper.toDto(
                 inventoryRepository.getReferenceById(
-                        UUID.fromString(idInventory)));
+                        idInventory));
     }
 }

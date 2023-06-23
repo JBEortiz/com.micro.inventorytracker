@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ItemDTO {
-    private String uuid ;
+    private Long itemId ;
     private String name;
     private String description;
     private ItemRarity itemRarity;

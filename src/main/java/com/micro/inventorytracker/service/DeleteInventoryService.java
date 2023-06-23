@@ -1,5 +1,5 @@
 package com.micro.inventorytracker.service;
 
 public interface DeleteInventoryService {
-    void deleteId(String idItem);
+    void deleteId(Long idItem);
 }

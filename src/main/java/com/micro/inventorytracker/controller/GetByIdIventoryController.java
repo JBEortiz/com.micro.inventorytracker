@@ -17,7 +17,7 @@ public class GetByIdIventoryController {
     private final GetByIdInventoryService getByIdInventoryService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<InventoryDTO> getByIdInventory(@PathVariable String id) {
+    public ResponseEntity<InventoryDTO> getByIdInventory(@PathVariable Long id) {
         return new ResponseEntity<>(getByIdInventoryService.getById(id), HttpStatus.OK);
     }
 }

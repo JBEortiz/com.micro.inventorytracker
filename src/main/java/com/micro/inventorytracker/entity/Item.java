@@ -18,9 +18,8 @@ import java.util.UUID;
 public class Item {
 
     @Id
-    @GenericGenerator(name = "system-uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "idItem", length = 36,unique = true)
-    private UUID idItem ;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long  itemId ;
     private String name;
     private String description;
     private ItemRarity itemRarity;

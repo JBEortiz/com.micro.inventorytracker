@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class GetByIdItemController {
     private final GetByIdItemService getByIdItemService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ItemDTO> getByIdItem(@PathVariable String id) {
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<ItemDTO> getByIdItem(@PathVariable Long id) {
         return new ResponseEntity<>(getByIdItemService.getById(id), HttpStatus.OK);
     }
 }

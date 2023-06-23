@@ -19,7 +19,7 @@ import java.util.List;
 public class GetAllInventoryController {
     private final GetAllInventoryService getAllInventoryService;
 
-    @PostMapping("/items")
+    @PostMapping("/inventories")
     public ResponseEntity<List<InventoryDTO>> getAll() {
         return new ResponseEntity<>(getAllInventoryService.getAll(), HttpStatus.OK);
     }

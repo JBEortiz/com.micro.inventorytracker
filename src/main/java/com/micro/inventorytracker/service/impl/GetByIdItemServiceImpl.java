@@ -20,10 +20,10 @@ public class GetByIdItemServiceImpl implements GetByIdItemService {
     private final ItemMapper itemMapper;
 
     @Override
-    public ItemDTO getById(String idItem) {
+    public ItemDTO getById(Long idItem) {
         return itemMapper.toDto(
                 itemRepository.getReferenceById(
-                        UUID.fromString(idItem)));
+                        idItem));
     }
 
 }

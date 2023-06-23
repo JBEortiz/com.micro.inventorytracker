@@ -1,6 +1,7 @@
 package com.micro.inventorytracker.entity;
 
 import lombok.*;
+import lombok.extern.java.Log;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -16,11 +17,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name="IVENROTY")
 public class Inventory {
-
     @Id
-    @GenericGenerator(name = "system-uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "idIventory", length = 36,unique = true)
-    private UUID idIventory ;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long inventoryId ;
     private String idPerson;
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Item> items;

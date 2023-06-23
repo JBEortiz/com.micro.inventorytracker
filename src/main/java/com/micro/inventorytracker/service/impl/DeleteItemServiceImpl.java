@@ -17,7 +17,7 @@ public class DeleteItemServiceImpl implements DeleteItemService {
     private final ItemMapper itemMapper;
 
     @Override
-    public void deleteId(String idItem) {
+    public void deleteId(Long idItem) {
         itemRepository.delete(
                 itemMapper.toEntity(
                         getByIdItemService.getById(idItem)));

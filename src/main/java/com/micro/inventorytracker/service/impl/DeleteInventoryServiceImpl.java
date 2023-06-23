@@ -15,7 +15,7 @@ public class DeleteInventoryServiceImpl implements DeleteInventoryService {
     private final InventoryMapper inventoryMapper;
 
     @Override
-    public void deleteId(String idItem) {
+    public void deleteId(Long idItem) {
 
     }
 }

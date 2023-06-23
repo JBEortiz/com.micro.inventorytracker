@@ -16,7 +16,7 @@ public class DeleteInventoryController {
     private final DeleteInventoryService deleteInventoryService;
 
     @PostMapping("/delete")
-    public void deleteItem(@PathVariable String id) {
+    public void deleteItem(@PathVariable Long id) {
         deleteInventoryService.deleteId(id);
     }
 }

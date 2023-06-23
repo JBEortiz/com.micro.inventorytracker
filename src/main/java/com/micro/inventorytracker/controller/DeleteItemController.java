@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("Item")
+@RequestMapping("item")
 public class DeleteItemController {
     private final DeleteItemService deleteItemService;
 
     @PostMapping("/delete")
-    public void deleteItem(@PathVariable String id) {
+    public void deleteItem(@PathVariable Long id) {
        deleteItemService.deleteId(id);
     }
 }
