@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -18,6 +19,10 @@ public class GetAlliItemController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<ItemDTO>> getAll() {
-        return new ResponseEntity<>(getAllItemService.getAll(), HttpStatus.OK);
+        List<ItemDTO> listItem = getAllItemService.getAll();
+        if(listItem.isEmpty()){
+            throw new EntityNotFoundException();
+        }
+        return new ResponseEntity<>(listItem, HttpStatus.OK);
     }
 }
